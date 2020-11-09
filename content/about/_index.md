@@ -20,8 +20,8 @@ AmeriCorps VISTA, City of San Angelo Development Corporation - San Angelo, TX
 
 **B.A. in Philosophy, Politics, Economics, and Law**, Dec 2018\
 University of Richmond - Richmond, VA\
-- Vice President of Sustainability Club\
-- Alpha Phi Omega Service Fraternity
+* Vice President of Sustainability Club\
+* Alpha Phi Omega Service Fraternity
 
 
 ### CERTIFICATIONS
@@ -29,24 +29,26 @@ University of Richmond - Richmond, VA\
 **Professional Certificate in Data Science**, Jun - Sep 2020\
 IBM\
 Courses:\
-- Tools for Data Science\
-- Data Science Methodology\
-- Python for Data Science and AI\
-- Databases and SQL for Data Science\
-- Data Analysis with Python\
-- Data Visualization with Python\
-- Machine Learning with Python\
-- Applied Data Science Capstone\
+* Tools for Data Science\
+* Data Science Methodology\
+* Python for Data Science and AI\
+* Databases and SQL for Data Science\
+* Data Analysis with Python\
+* Data Visualization with Python\
+* Machine Learning with Python\
+* Applied Data Science Capstone\
 
 ### TECHNICAL SUMMARY
 
 #### LANGUAGES
-- R
-- Python
-- SQL
+* R
+* Python
+* SQL
 
 #### SOFTWARE
-- MS Office (advanced proficiency in Excel)
-- Tableau
-- SalesForce
-- SurveyMonkey
+* Adobe Illustrator
+* Adobe Photoshop
+* MS Office (advanced proficiency in Excel)
+* Tableau
+* SalesForce
+* SurveyMonkey
