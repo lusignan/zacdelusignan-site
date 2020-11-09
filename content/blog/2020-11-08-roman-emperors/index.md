@@ -17,7 +17,7 @@ type: post
 
 For my first TidyTuesday post I decided to explore the Roman Emperors [data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-08-13) from 26 BCE to 395 CE.
 
-![Chart](/2020-11-08-roman-emperors/index_files/emperors.png)
+![Chart](/img/main/emperors.png)
 
 What's interesting is that even in an authoritarian form of government such as the Roman Empire, democratically elected emperors had longer reigns than those who rose to power by other means.
 

@@ -17,7 +17,7 @@ type: itemized
 ## RStudio IDE and syntax theme
 https://github.com/lusignan/Nautical-Twilight
 
-![Nautical Twilight](/img/projects/nautical-twilight-rstudio-preview.png)
+![Nautical Twilight](/img/main/nautical-twilight-rstudio-preview.png)
 
 ### Compatability
 RStudio 1.3
