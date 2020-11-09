@@ -19,8 +19,8 @@ AmeriCorps VISTA, City of San Angelo Development Corporation - San Angelo, TX
 ### EDUCATION
 
 **B.A. in Philosophy, Politics, Economics, and Law**, Dec 2018\
-University of Richmond - Richmond, VA
-- Vice President of Sustainability Club
+University of Richmond - Richmond, VA\
+- Vice President of Sustainability Club\f
 - Alpha Phi Omega Service Fraternity
 
 
