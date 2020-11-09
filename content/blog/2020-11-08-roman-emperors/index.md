@@ -15,13 +15,11 @@ type: post
 
 ## Introduction
 
-For my first TidyTuesday post I decided to explore the Roman Emperors [data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-08-13) from 26 BCE to 395 CE.
+From TidyTuesday's Roman Emperors [data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-08-13).
 
 ![Chart](/img/main/emperors.png)
 
-What's interesting is that even in an authoritarian form of government such as the Roman Empire, democratically elected emperors had longer reigns than those who rose to power by other means.
-
-The shortest reign was that of Didius Julianus, the only emperor who purchased the throne outright. Julianus offered to pay the Praetorian Guard 25,000 sesterces for every soldier (41x a soldier's annual salary) in exchange for the throne. His purchase of the throne was viewed with disgust by the people and after nine short weeks, during which he ignored his duties to instead live in luxury, he was sentenced to death by the senate.
+The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power.
 
 ## Code
 
