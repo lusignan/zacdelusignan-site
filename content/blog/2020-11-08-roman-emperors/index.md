@@ -3,8 +3,8 @@ title: Roman Emperors
 author: Zac de Lusignan
 date: '2020-11-08'
 slug: roman-emperors
-categories: []
-tags: []
+categories: ['Data Visualization']
+tags: ['R']
 description: ''
 featured: ''
 featuredalt: ''
@@ -19,7 +19,7 @@ From TidyTuesday's Roman Emperors [data set](https://github.com/rfordatascience/
 
 ![Chart](/img/main/emperors.png)
 
-The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power.
+The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power. 
 
 ## Code
 

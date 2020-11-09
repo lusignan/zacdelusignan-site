@@ -5,7 +5,7 @@ title: About
 
 ## Zac de Lusignan
 
-Data Analyst experienced with research design, project management, and economic development.
+Interdisciplinary data analyst experienced in data wrangling, exploration, and visualization with social science and economic data. Skilled in communicating complex statistical concepts to colleagues and lay audiences.
 
 ### EXPERIENCE
 
@@ -40,4 +40,13 @@ Courses:\
 
 ### TECHNICAL SUMMARY
 
-R, MS Office (advanced proficiency in Excel), Python, Tableau, SQL, SurveyMonkey
+#### LANGUAGES
+- R
+- Python
+- SQL
+
+#### SOFTWARE
+- MS Office (advanced proficiency in Excel)
+- Tableau
+- SalesForce
+- SurveyMonkey
