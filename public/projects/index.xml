@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Zac de Lusignan</title>
+    <link>https://zacdelusignan.com/projects/</link>
+    <description>Recent content in Projects on Zac de Lusignan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zacdelusignan.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nautical Twilight</title>
+      <link>https://zacdelusignan.com/projects/item1/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/projects/item1/</guid>
+      <description>RStudio IDE and syntax theme https://github.com/lusignan/Nautical-Twilight
+Compatability RStudio 1.3
+Installation To install, run the following in your RStudio console:
+rstudioapi::addTheme(&amp;quot;https://raw.githubusercontent.com/lusignan/Nautical-Twilight/main/nautical-twilight.rstheme&amp;quot;, apply = TRUE) </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zac de Lusignan</title>
+    <link>https://zacdelusignan.com/</link>
+    <description>Recent content on Zac de Lusignan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zacdelusignan.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Roman Emperors</title>
+      <link>https://zacdelusignan.com/blog/roman-emperors/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/blog/roman-emperors/</guid>
+      <description>Introduction For my first TidyTuesday post I decided to explore the Roman Emperors data set from 26 BCE to 395 CE.
+What&amp;rsquo;s interesting is that even in an authoritarian form of government such as the Roman Empire, democratically elected emperors had longer reigns than those who rose to power by other means.
+The shortest reign was that of Didius Julianus, the only emperor who purchased the throne outright. Julianus offered to pay the Praetorian Guard 25,000 sesterces for every soldier (41x a soldier&amp;rsquo;s annual salary) in exchange for the throne.</description>
+    </item>
+    
+    <item>
+      <title>Nautical Twilight</title>
+      <link>https://zacdelusignan.com/projects/item1/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/projects/item1/</guid>
+      <description>RStudio IDE and syntax theme https://github.com/lusignan/Nautical-Twilight
+Compatability RStudio 1.3
+Installation To install, run the following in your RStudio console:
+rstudioapi::addTheme(&amp;quot;https://raw.githubusercontent.com/lusignan/Nautical-Twilight/main/nautical-twilight.rstheme&amp;quot;, apply = TRUE) </description>
+    </item>
+    
+  </channel>
+</rss>
