@@ -19,11 +19,13 @@ From TidyTuesday's Roman Emperors [data set](https://github.com/rfordatascience/
 
 ![Chart](/img/main/emperors.png)
 
-The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power. 
+The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power.
+
+Note: I was curious why those who purchased their power had such short reigns and decided to do further research. In 193 CE, Didius Julianus paid the Praetorian Guard 25,000 sesterces (this was 41 times a soldier's annual salary) for every soldier in the army in exchange for being named emperor. He was widely despised for this as the people found such blatant corruption insulting and proceeded to mock him whenever he appeared in public. After nine short weeks as emperor, the senate ordered his execution.
 
 ## Code
 
-Below is the code used to create the visualization:
+Below is the code used to create the visualization using R:
 
 ````
 #Load the libraries
@@ -32,7 +34,7 @@ library(tidytuesdayR)
 library(ggthemes)
 
 #Custom palette
-romana = c("#8E1F2F","#702963","#B85C28","#297036", "#F0BC42","#26619C","#321C6F","#1F8E7E")
+imperiumromanum = c("#8E1F2F","#702963","#B85C28","#297036", "#F0BC42","#26619C","#321C6F","#1F8E7E")
 
 #Read in the dataset
 emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
@@ -51,7 +53,7 @@ reign <- emperors %>%
 #Create a plot
 p <- ggplot(reign, aes(x = years_in_power, y = reorder(rise, years_in_power))) +
   geom_bar(aes(fill = rise), stat = "identity") +
-  scale_fill_manual(values = romana) +
+  scale_fill_manual(values = imperiumromanum) +
   scale_x_continuous(breaks = seq(0, 12, 2)) +
   labs(title = "Roman Emperors",
        subtitle = "Rise to Power and Length of Reign",

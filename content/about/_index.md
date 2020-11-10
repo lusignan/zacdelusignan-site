@@ -43,14 +43,14 @@ Courses:
 ### TECHNICAL SUMMARY
 
 #### LANGUAGES
-* R
 * Python
+* R
 * SQL
 
 #### SOFTWARE
 * Adobe Illustrator
 * Adobe Photoshop
 * MS Office (advanced proficiency in Excel)
-* Tableau
 * SalesForce
 * SurveyMonkey
+* Tableau
