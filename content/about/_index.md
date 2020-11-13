@@ -5,7 +5,7 @@ title: About
 
 ## Zac de Lusignan
 
-Interdisciplinary data analyst experienced in data wrangling, exploration, and visualization with social science and economic data. Skilled in communicating complex statistical concepts to colleagues and lay audiences.
+Interdisciplinary data analyst experienced in data wrangling, exploration, and visualization with social science and economic data. Skilled in communicating complex statistical concepts to non-technical audiences.
 
 ### EXPERIENCE
 
