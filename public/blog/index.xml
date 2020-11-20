@@ -18,8 +18,9 @@
       
       <guid>https://zacdelusignan.com/blog/roman-emperors/</guid>
       <description>Introduction From TidyTuesday&amp;rsquo;s Roman Emperors data set.
-The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power.
-Note: I was curious why those who purchased their power had such short reigns and decided to do further research. In 193 CE, Didius Julianus paid the Praetorian Guard 25,000 sesterces (this was 41 times a soldier&amp;rsquo;s annual salary) for every soldier in the army in exchange for being named emperor.</description>
+The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased the throne.
+Code Below is the code used to create the visualization using R:
+#Load the libraries library(tidyverse) library(tidytuesdayR) library(ggthemes) #Custom color palette imperiumromanum = c(&amp;quot;#8E1F2F&amp;quot;,&amp;quot;#702963&amp;quot;,&amp;quot;#B85C28&amp;quot;,&amp;quot;#297036&amp;quot;, &amp;quot;#F0BC42&amp;quot;,&amp;quot;#26619C&amp;quot;,&amp;quot;#321C6F&amp;quot;,&amp;quot;#1F8E7E&amp;quot;) #Load the dataset emperors &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv&amp;quot;) #Convert the dates into numeric emperors$reign_start &amp;lt;- as.</description>
     </item>
     
   </channel>

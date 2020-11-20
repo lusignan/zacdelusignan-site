@@ -19,9 +19,7 @@ From TidyTuesday's Roman Emperors [data set](https://github.com/rfordatascience/
 
 ![Chart](/img/main/emperors.png)
 
-The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased their power.
-
-Note: I was curious why those who purchased their power had such short reigns and decided to do further research. In 193 CE, Didius Julianus paid the Praetorian Guard 25,000 sesterces (this was 41 times a soldier's annual salary) for every soldier in the army in exchange for being named emperor. He was widely despised for this as the people found such blatant corruption insulting and proceeded to mock him whenever he appeared in public. After nine short weeks as emperor, the senate ordered his execution.
+The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased the throne.
 
 ## Code
 
@@ -33,17 +31,17 @@ library(tidyverse)
 library(tidytuesdayR)
 library(ggthemes)
 
-#Custom palette
+#Custom color palette
 imperiumromanum = c("#8E1F2F","#702963","#B85C28","#297036", "#F0BC42","#26619C","#321C6F","#1F8E7E")
 
-#Read in the dataset
+#Load the dataset
 emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
 
 #Convert the dates into numeric
 emperors$reign_start <- as.numeric(emperors$reign_start)
 emperors$reign_end <- as.numeric(emperors$reign_end)
 
-#Find the mean reign for each method of assuming the throne
+#Find the mean length of reign for each method of assuming the throne
 reign <- emperors %>%
   group_by(rise) %>%
   mutate(reign_length = reign_end - reign_start) %>%
@@ -76,3 +74,5 @@ p + theme(legend.position = "none",
                               color = "black")
           )
 ````
+
+Note: I was curious why those who purchased their power had such short reigns and decided to do further research. In 193 CE, Didius Julianus paid the Praetorian Guard 25,000 sesterces (this was 41 times a soldier's annual salary) for every soldier in the army in exchange for being named emperor. He was widely despised for this as the people found such blatant corruption insulting and proceeded to mock him whenever he appeared in public. After nine short weeks as emperor, the senate ordered his execution.
