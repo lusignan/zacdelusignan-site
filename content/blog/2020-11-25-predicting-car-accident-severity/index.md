@@ -43,7 +43,8 @@ df.head()
 df = df[['SEVERITYCODE', 'WEATHER', 'ROADCOND', 'LIGHTCOND']]
 df.head()
 ````
-<img src = "/img/collision/dfhead.png"></img>
+
+![dfhead](/img/collision/dfhead.png)
 
 ````
 #Dropping NaN values
@@ -58,7 +59,7 @@ df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-<img src = "/img/collision/weatherhead.png"></img>
+![Weather](/img/collision/weatherhead.png)
 
 We see that there are 11 different weather variables. The next step is to replace the acceptable weather conditions with "0" and adverse conditions with "1". We'll also be removing "Unknown" and "Other" conditions as they can't be analyzed.
 
@@ -71,7 +72,8 @@ df = df[df.WEATHER != 'Unknown']
 df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
-<img src = "/img/collision/weather2.png"></img>
+
+![Weather 2](/img/collision/weather2.png)
 
 ## Road Conditions
 
@@ -84,7 +86,7 @@ df['ROADCOND'].value_counts().plot(kind  = 'bar')
 plt.show()
 ````
 
-<img src = "/img/collision/roadconditions.png"></img>
+![Road Conditions](/img/collision/roadconditions.png)
 
 There are 9 road condition variables. With the exception of "Dry" they are all adverse. Once again, we'll drop "Unknown" and "Other" and replace "Dry" with "1" and the adverse conditions with "0".
 
@@ -98,7 +100,7 @@ df['ROADCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-<img src = "/img/collision/roadconditions2.png"></img>
+![Road Conditions 2](/img/collision/roadconditions2.png)
 
 ## Light Conditions
 
@@ -107,7 +109,7 @@ df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-<img src = "/img/collision/lightconditions.png"></img>
+![Light Conditions](/img/collision/lightconditions.png)
 
 There are 9 light conditions variables which can be divided into good visibility and low visibility.
 
@@ -198,7 +200,7 @@ plt.tight_layout()
 plt.show()
 ````
 
-<img src = "/img/collision/nearestneighbor.png"></img>
+![Accuracy](/img/collision/nearestneighbor.png)
 
 ````
 print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax()+1)

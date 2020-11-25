@@ -373,14 +373,14 @@ df = pd.read_csv('Data-Collisions.csv', error_bad_lines=False)
 #Keeping only the relevant variables in the data frame
 df = df[['SEVERITYCODE', 'WEATHER', 'ROADCOND', 'LIGHTCOND']]
 df.head()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/dfhead.png" alt="dfhead"></p>
 <pre><code>#Dropping NaN values
 df.dropna(subset=['WEATHER', 'ROADCOND', 'LIGHTCOND'], inplace=True)
 df.info()
 </code></pre><h2 id="weather">Weather</h2>
 <pre><code>df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/weatherhead.png" alt="Weather"></p>
 <p>We see that there are 11 different weather variables. The next step is to replace the acceptable weather conditions with &ldquo;0&rdquo; and adverse conditions with &ldquo;1&rdquo;. We&rsquo;ll also be removing &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; conditions as they can&rsquo;t be analyzed.</p>
 <pre><code>df['WEATHER'].replace(to_replace = ['Clear', 'Overcast', 'Partly Cloudy', 'Raining', 'Fog/Smog/Smoke','Sleet/Hail/Freezing Rain', 'Blowing Sand/Dirt', 'Severe Crosswind', 'Snowing'],
                     value = [0,0,0,1,1,1, 1,1,1],
@@ -389,7 +389,7 @@ df = df[df.WEATHER != 'Other']
 df = df[df.WEATHER != 'Unknown']
 df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/weather2.png" alt="Weather 2"></p>
 <h2 id="road-conditions">Road Conditions</h2>
 <pre><code>df_road = pd.DataFrame(df['ROADCOND'].value_counts())
 df_road.index.name = 'type'
@@ -397,7 +397,7 @@ df_road.reset_index(inplace = True)
 df_road['%'] = (df_road['ROADCOND']/df_road['ROADCOND'].sum())*100
 df['ROADCOND'].value_counts().plot(kind  = 'bar')
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/roadconditions.png" alt="Road Conditions"></p>
 <p>There are 9 road condition variables. With the exception of &ldquo;Dry&rdquo; they are all adverse. Once again, we&rsquo;ll drop &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; and replace &ldquo;Dry&rdquo; with &ldquo;1&rdquo; and the adverse conditions with &ldquo;0&rdquo;.</p>
 <pre><code>df['ROADCOND'].replace(to_replace = ['Dry', 'Wet', 'Ice', 'Snow/Slush', 'Standing Water','Sand/Mud/Dirt', 'Oil'],
                         value = [0,1,1,1,1,1,1],
@@ -406,11 +406,11 @@ df = df[df.ROADCOND != 'Unknown']
 df = df[df.ROADCOND != 'Other']
 df['ROADCOND'].value_counts().plot(kind = 'bar')
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/roadconditions2.png" alt="Road Conditions 2"></p>
 <h2 id="light-conditions">Light Conditions</h2>
 <pre><code>df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/lightconditions.png" alt="Light Conditions"></p>
 <p>There are 9 light conditions variables which can be divided into good visibility and low visibility.</p>
 <pre><code>df['LIGHTCOND'].replace(to_replace = ['Daylight', 'Dusk', 'Dawn', 'Dark - No Street Lights', 'Dark - Street Lights Off','Dark - Unknown Lighting', 'Dark - Street Lights On'],
                         value = [0,0,0,1,1,1, 1],
@@ -469,7 +469,7 @@ plt.ylabel('Accuracy ')
 plt.xlabel('Number of Neighbors (K)')
 plt.tight_layout()
 plt.show()
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre><p><img src="https://zacdelusignan.com/img/collision/nearestneighbor.png" alt="Accuracy"></p>
 <pre><code>print( &quot;The best accuracy was with&quot;, mean_acc.max(), &quot;with k=&quot;, mean_acc.argmax()+1)
 </code></pre><p>The best accuracy was with 0.670334196281478 with k= 4.</p>
 <h2 id="conclusion">Conclusion</h2>
