@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Zac de Lusignan</title>
+    <link>https://zacdelusignan.com/tags/python/</link>
+    <description>Recent content in Python on Zac de Lusignan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zacdelusignan.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Predicting Car Accident Severity</title>
+      <link>https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/</guid>
+      <description>Introduction For my capstone project as part of IBM&amp;rsquo;s Professional Certificate in Data Science I created a machine learning model that would predict the severity of a car accident based off of the lighting conditions, road conditions, and weather. This project has many practical uses. Being able to better predict how severe an accident is enables emergency services to more effectively triage in cases of multiple accidents. It could also optimize navigation apps ability to suggest alternate routes.</description>
+    </item>
+    
+  </channel>
+</rss>
