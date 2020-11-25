@@ -38,13 +38,12 @@ df = pd.read_csv('Data-Collisions.csv', error_bad_lines=False)
 ## Initial Data Exploration
 
 ````
-df.head()
 #Keeping only the relevant variables in the data frame
 df = df[['SEVERITYCODE', 'WEATHER', 'ROADCOND', 'LIGHTCOND']]
 df.head()
 ````
 
-![dfhead](/img/collision/dfhead.png)
+![dfhead](/img/main/dfhead.png)
 
 ````
 #Dropping NaN values
@@ -59,7 +58,7 @@ df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-![Weather](/img/collision/weatherhead.png)
+![Weather](/img/main/weatherhead.png)
 
 We see that there are 11 different weather variables. The next step is to replace the acceptable weather conditions with "0" and adverse conditions with "1". We'll also be removing "Unknown" and "Other" conditions as they can't be analyzed.
 
@@ -73,7 +72,7 @@ df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-![Weather 2](/img/collision/weather2.png)
+![Weather 2](/img/main/weather2.png)
 
 ## Road Conditions
 
@@ -86,7 +85,7 @@ df['ROADCOND'].value_counts().plot(kind  = 'bar')
 plt.show()
 ````
 
-![Road Conditions](/img/collision/roadconditions.png)
+![Road Conditions](/img/main/roadconditions.png)
 
 There are 9 road condition variables. With the exception of "Dry" they are all adverse. Once again, we'll drop "Unknown" and "Other" and replace "Dry" with "1" and the adverse conditions with "0".
 
@@ -100,7 +99,7 @@ df['ROADCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-![Road Conditions 2](/img/collision/roadconditions2.png)
+![Road Conditions 2](/img/main/roadconditions2.png)
 
 ## Light Conditions
 
@@ -109,7 +108,7 @@ df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
 
-![Light Conditions](/img/collision/lightconditions.png)
+![Light Conditions](/img/main/lightconditions.png)
 
 There are 9 light conditions variables which can be divided into good visibility and low visibility.
 
@@ -122,6 +121,8 @@ df = df[df.LIGHTCOND != 'Other']
 df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 ````
+![Light Conditions2](/img/main/lightconditions2.png)
+
 
 ## Model Selection
 
@@ -200,7 +201,7 @@ plt.tight_layout()
 plt.show()
 ````
 
-![Accuracy](/img/collision/nearestneighbor.png)
+![Accuracy](/img/main/nearestneighbor.png)
 
 ````
 print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax()+1)
