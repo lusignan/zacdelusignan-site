@@ -124,9 +124,9 @@ plt.show()
 ![Light Conditions2](/img/main/lightconditions2.png)
 
 
-## Model Selection
+## Model Development
 
-It's now time to build the model.
+To build the model we'll use the k-Nearest Neighbours (kNN) algorithm. Essentially, the kNN algorithm thinks that observations with similar characteristics will have similar outcomes.
 
 ````
 from sklearn.model_selection import cross_val_score
@@ -135,24 +135,24 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 ````
-The y variable will be the severity code.
+The y variable will be the severity code. This is what we're trying to predict.
 ````
 y = df['SEVERITYCODE']
 y[0:5]
 ````
-The x variable will be the weather, light conditions, and road conditions.
+The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.
 
 ````
-X = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
-X[0:5]
+x = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
+x[0:5]
 ````
-Now we divide this new dataframe into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy. Essentially the training set is the study guide with answers for a test and the test set is the test itself.
+Now we split the data into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy.
 
 ````
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.1, random_state=5)
-print ('Train set:', X_train.shape,  y_train.shape)
-print ('Test set:', X_test.shape,  y_test.shape)
+x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.1, random_state=5)
+print ('Train set:', x_train.shape,  y_train.shape)
+print ('Test set:', x_test.shape,  y_test.shape)
 ````
 
 ````
@@ -160,16 +160,16 @@ from sklearn.neighbors import KNeighborsClassifier
 ````
 ````
 k = 5
-neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
+neigh = KNeighborsClassifier(n_neighbors = k).fit(x_train,y_train)
 neigh
 ````
 ````
-yhat = neigh.predict(X_test)
+yhat = neigh.predict(x_test)
 yhat[0:5]
 ````
 ````
 from sklearn import metrics
-print("Training set accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
+print("Training set accuracy: ", metrics.accuracy_score(y_train, neigh.predict(x_train)))
 print("Test set accuracy: ", metrics.accuracy_score(y_test, yhat))
 ````
 Train set Accuracy:  0.6716091029739607 \
@@ -179,20 +179,17 @@ Test set Accuracy:  0.6684514003294892
 Ks = 10
 mean_acc = np.zeros((Ks-1))
 std_acc = np.zeros((Ks-1))
-ConfusionMx = [];
 for n in range(1,Ks):
     
-    neigh = KNeighborsClassifier(n_neighbors = n).fit(X_train,y_train)
-    yhat=neigh.predict(X_test)
+    neigh = KNeighborsClassifier(n_neighbors = n).fit(x_train,y_train)
+    yhat=neigh.predict(x_test)
     mean_acc[n-1] = metrics.accuracy_score(y_test, yhat)
-
-    
     std_acc[n-1]=np.std(yhat==y_test)/np.sqrt(yhat.shape[0])
 
 mean_acc
 ````
 ````
-plt.plot(range(1,Ks),mean_acc,'g')
+plt.plot(range(1,Ks),mean_acc,'red')
 plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
 plt.legend(('Accuracy ', '+/- 3xstd'))
 plt.ylabel('Accuracy ')
@@ -202,11 +199,6 @@ plt.show()
 ````
 
 ![Accuracy](/img/main/nearestneighbor.png)
-
-````
-print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax()+1)
-````
-The best accuracy was with 0.670334196281478 with k= 4.
 
 ## Conclusion
 

@@ -24,7 +24,7 @@
         "datePublished": "2020-11-25 00:00:00 \u002b0000 UTC",
         "dateModified" : "2020-11-25 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/zacdelusignan.com\/blog\/2020-11-25-predicting-car-accident-severity\/",
-        "wordCount" : "642",
+        "wordCount" : "636",
         "keywords" : [ "Python","Blog" ]
     }
     </script>
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="Introduction For my capstone project as part of IBM&rsquo;s Professional Certificate in Data Science I created a machine learning model that would predict the severity of a car accident based off of the lighting conditions, road conditions, and weather. This project has many practical uses. Being able to better predict how severe an accident is enables emergency services to more effectively triage in cases of multiple accidents. It could also optimize navigation apps ability to suggest alternate routes.">
 <meta itemprop="datePublished" content="2020-11-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="642">
+<meta itemprop="wordCount" content="636">
 
 
 
@@ -351,7 +351,8 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/">Predicting Car Accident Severity</a></h2>
+            <h1><a href="https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/">Predicting Car Accident Severity</a></h1>
+            
         
         
     </div>
@@ -363,7 +364,7 @@
             November 25, 2020</time>
         <span class="author">Zac de Lusignan</span>
         
-            <p>4 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -501,50 +502,47 @@ df = df[df.LIGHTCOND != 'Other']
 df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 </code></pre><p><img src="https://zacdelusignan.com/img/main/lightconditions2.png" alt="Light Conditions2"></p>
-<h2 id="model-selection">Model Selection</h2>
-<p>It&rsquo;s now time to build the model.</p>
+<h2 id="model-development">Model Development</h2>
+<p>To build the model we&rsquo;ll use the k-Nearest Neighbours (kNN) algorithm. Essentially, the kNN algorithm thinks that observations with similar characteristics will have similar outcomes.</p>
 <pre><code>from sklearn.model_selection import cross_val_score
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
-</code></pre><p>The y variable will be the severity code.</p>
+</code></pre><p>The y variable will be the severity code. This is what we&rsquo;re trying to predict.</p>
 <pre><code>y = df['SEVERITYCODE']
 y[0:5]
-</code></pre><p>The x variable will be the weather, light conditions, and road conditions.</p>
-<pre><code>X = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
-X[0:5]
-</code></pre><p>Now we divide this new dataframe into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy. Essentially the training set is the study guide with answers for a test and the test set is the test itself.</p>
+</code></pre><p>The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.</p>
+<pre><code>x = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
+x[0:5]
+</code></pre><p>Now we split the data into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy.</p>
 <pre><code>from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.1, random_state=5)
-print ('Train set:', X_train.shape,  y_train.shape)
-print ('Test set:', X_test.shape,  y_test.shape)
+x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.1, random_state=5)
+print ('Train set:', x_train.shape,  y_train.shape)
+print ('Test set:', x_test.shape,  y_test.shape)
 </code></pre><pre><code>from sklearn.neighbors import KNeighborsClassifier
 </code></pre><pre><code>k = 5
-neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
+neigh = KNeighborsClassifier(n_neighbors = k).fit(x_train,y_train)
 neigh
-</code></pre><pre><code>yhat = neigh.predict(X_test)
+</code></pre><pre><code>yhat = neigh.predict(x_test)
 yhat[0:5]
 </code></pre><pre><code>from sklearn import metrics
-print(&quot;Training set accuracy: &quot;, metrics.accuracy_score(y_train, neigh.predict(X_train)))
+print(&quot;Training set accuracy: &quot;, metrics.accuracy_score(y_train, neigh.predict(x_train)))
 print(&quot;Test set accuracy: &quot;, metrics.accuracy_score(y_test, yhat))
 </code></pre><p>Train set Accuracy:  0.6716091029739607<br>
 Test set Accuracy:  0.6684514003294892</p>
 <pre><code>Ks = 10
 mean_acc = np.zeros((Ks-1))
 std_acc = np.zeros((Ks-1))
-ConfusionMx = [];
 for n in range(1,Ks):
     
-    neigh = KNeighborsClassifier(n_neighbors = n).fit(X_train,y_train)
-    yhat=neigh.predict(X_test)
+    neigh = KNeighborsClassifier(n_neighbors = n).fit(x_train,y_train)
+    yhat=neigh.predict(x_test)
     mean_acc[n-1] = metrics.accuracy_score(y_test, yhat)
-
-    
     std_acc[n-1]=np.std(yhat==y_test)/np.sqrt(yhat.shape[0])
 
 mean_acc
-</code></pre><pre><code>plt.plot(range(1,Ks),mean_acc,'g')
+</code></pre><pre><code>plt.plot(range(1,Ks),mean_acc,'red')
 plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
 plt.legend(('Accuracy ', '+/- 3xstd'))
 plt.ylabel('Accuracy ')
@@ -552,8 +550,6 @@ plt.xlabel('Number of Neighbors (K)')
 plt.tight_layout()
 plt.show()
 </code></pre><p><img src="https://zacdelusignan.com/img/main/nearestneighbor.png" alt="Accuracy"></p>
-<pre><code>print( &quot;The best accuracy was with&quot;, mean_acc.max(), &quot;with k=&quot;, mean_acc.argmax()+1)
-</code></pre><p>The best accuracy was with 0.670334196281478 with k= 4.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Knowing only the weather, road conditions, and light conditions we can predict with 67% accuracy how severe a car accident is.</p>
 
