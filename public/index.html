@@ -287,7 +287,7 @@
             November 25, 2020</time>
         <span class="author">Zac de Lusignan</span>
         
-            <p>3 minute read</p>
+            <p>4 minute read</p>
         
         
     </div>
@@ -386,7 +386,7 @@ df.info()
 <pre><code>df['WEATHER'].value_counts().plot(kind = 'bar')
 plt.show()
 </code></pre><p><img src="https://zacdelusignan.com/img/main/weatherhead.png" alt="Weather"></p>
-<p>We see that there are 11 different weather variables. The next step is to replace the acceptable weather conditions with &ldquo;0&rdquo; and adverse conditions with &ldquo;1&rdquo;. We&rsquo;ll also be removing &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; conditions as they can&rsquo;t be analyzed.</p>
+<p>We see that there are 11 different weather values. The next step is to replace the acceptable weather conditions with &ldquo;0&rdquo; and adverse conditions with &ldquo;1&rdquo;. We&rsquo;ll also be removing &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; conditions as they can&rsquo;t be analyzed.</p>
 <pre><code>df['WEATHER'].replace(to_replace = ['Clear', 'Overcast', 'Partly Cloudy', 'Raining', 'Fog/Smog/Smoke','Sleet/Hail/Freezing Rain', 'Blowing Sand/Dirt', 'Severe Crosswind', 'Snowing'],
                     value = [0,0,0,1,1,1, 1,1,1],
                     inplace = True)
@@ -403,7 +403,7 @@ df_road['%'] = (df_road['ROADCOND']/df_road['ROADCOND'].sum())*100
 df['ROADCOND'].value_counts().plot(kind  = 'bar')
 plt.show()
 </code></pre><p><img src="https://zacdelusignan.com/img/main/roadconditions.png" alt="Road Conditions"></p>
-<p>There are 9 road condition variables. With the exception of &ldquo;Dry&rdquo; they are all adverse. Once again, we&rsquo;ll drop &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; and replace &ldquo;Dry&rdquo; with &ldquo;1&rdquo; and the adverse conditions with &ldquo;0&rdquo;.</p>
+<p>There are 9 road condition values. With the exception of &ldquo;Dry&rdquo; they are all adverse. Once again, we&rsquo;ll drop &ldquo;Unknown&rdquo; and &ldquo;Other&rdquo; and replace &ldquo;Dry&rdquo; with &ldquo;1&rdquo; and the adverse conditions with &ldquo;0&rdquo;.</p>
 <pre><code>df['ROADCOND'].replace(to_replace = ['Dry', 'Wet', 'Ice', 'Snow/Slush', 'Standing Water','Sand/Mud/Dirt', 'Oil'],
                         value = [0,1,1,1,1,1,1],
                         inplace = True)
@@ -416,7 +416,7 @@ plt.show()
 <pre><code>df['LIGHTCOND'].value_counts().plot(kind = 'bar')
 plt.show()
 </code></pre><p><img src="https://zacdelusignan.com/img/main/lightconditions.png" alt="Light Conditions"></p>
-<p>There are 9 light conditions variables which can be divided into good visibility and low visibility.</p>
+<p>There are 9 light conditions values which can be divided into good visibility and low visibility.</p>
 <pre><code>df['LIGHTCOND'].replace(to_replace = ['Daylight', 'Dusk', 'Dawn', 'Dark - No Street Lights', 'Dark - Street Lights Off','Dark - Unknown Lighting', 'Dark - Street Lights On'],
                         value = [0,0,0,1,1,1, 1],
                         inplace = True)
@@ -432,28 +432,25 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
-</code></pre><p>The y variable will be the severity code. This is what we&rsquo;re trying to predict.</p>
+</code></pre><p>The y variable will be the severity code. This is what we&rsquo;re trying to predict. The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.</p>
 <pre><code>y = df['SEVERITYCODE']
-y[0:5]
-</code></pre><p>The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.</p>
-<pre><code>x = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
-x[0:5]
+x = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
 </code></pre><p>Now we split the data into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy.</p>
 <pre><code>from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.1, random_state=5)
 print ('Train set:', x_train.shape,  y_train.shape)
 print ('Test set:', x_test.shape,  y_test.shape)
-</code></pre><pre><code>from sklearn.neighbors import KNeighborsClassifier
-</code></pre><pre><code>k = 5
+</code></pre><p>Train set: (152961, 3) (152961,)<br>
+Test set: (16996, 3) (16996,)</p>
+<pre><code>from sklearn.neighbors import KNeighborsClassifier
+k = 5
 neigh = KNeighborsClassifier(n_neighbors = k).fit(x_train,y_train)
-neigh
-</code></pre><pre><code>yhat = neigh.predict(x_test)
-yhat[0:5]
-</code></pre><pre><code>from sklearn import metrics
+yhat = neigh.predict(x_test)
+from sklearn import metrics
 print(&quot;Training set accuracy: &quot;, metrics.accuracy_score(y_train, neigh.predict(x_train)))
 print(&quot;Test set accuracy: &quot;, metrics.accuracy_score(y_test, yhat))
-</code></pre><p>Train set Accuracy:  0.6716091029739607<br>
-Test set Accuracy:  0.6684514003294892</p>
+</code></pre><p>Training set accuracy:  0.6716091029739607<br>
+Test set accuracy:  0.6684514003294892</p>
 <pre><code>Ks = 10
 mean_acc = np.zeros((Ks-1))
 std_acc = np.zeros((Ks-1))
@@ -465,7 +462,9 @@ for n in range(1,Ks):
     std_acc[n-1]=np.std(yhat==y_test)/np.sqrt(yhat.shape[0])
 
 mean_acc
-</code></pre><pre><code>plt.plot(range(1,Ks),mean_acc,'red')
+</code></pre><p>array([0.60302424, 0.63509061, 0.61655684, 0.6703342 , 0.6684514 ,
+0.6703342 , 0.6684514 , 0.6703342 , 0.6703342 ])</p>
+<pre><code>plt.plot(range(1,Ks),mean_acc,'red')
 plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
 plt.legend(('Accuracy ', '+/- 3xstd'))
 plt.ylabel('Accuracy ')

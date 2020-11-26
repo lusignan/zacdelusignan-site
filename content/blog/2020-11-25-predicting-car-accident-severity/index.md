@@ -60,7 +60,7 @@ plt.show()
 
 ![Weather](/img/main/weatherhead.png)
 
-We see that there are 11 different weather variables. The next step is to replace the acceptable weather conditions with "0" and adverse conditions with "1". We'll also be removing "Unknown" and "Other" conditions as they can't be analyzed.
+We see that there are 11 different weather values. The next step is to replace the acceptable weather conditions with "0" and adverse conditions with "1". We'll also be removing "Unknown" and "Other" conditions as they can't be analyzed.
 
 ````
 df['WEATHER'].replace(to_replace = ['Clear', 'Overcast', 'Partly Cloudy', 'Raining', 'Fog/Smog/Smoke','Sleet/Hail/Freezing Rain', 'Blowing Sand/Dirt', 'Severe Crosswind', 'Snowing'],
@@ -87,7 +87,7 @@ plt.show()
 
 ![Road Conditions](/img/main/roadconditions.png)
 
-There are 9 road condition variables. With the exception of "Dry" they are all adverse. Once again, we'll drop "Unknown" and "Other" and replace "Dry" with "1" and the adverse conditions with "0".
+There are 9 road condition values. With the exception of "Dry" they are all adverse. Once again, we'll drop "Unknown" and "Other" and replace "Dry" with "1" and the adverse conditions with "0".
 
 ````
 df['ROADCOND'].replace(to_replace = ['Dry', 'Wet', 'Ice', 'Snow/Slush', 'Standing Water','Sand/Mud/Dirt', 'Oil'],
@@ -110,7 +110,7 @@ plt.show()
 
 ![Light Conditions](/img/main/lightconditions.png)
 
-There are 9 light conditions variables which can be divided into good visibility and low visibility.
+There are 9 light conditions values which can be divided into good visibility and low visibility.
 
 ````
 df['LIGHTCOND'].replace(to_replace = ['Daylight', 'Dusk', 'Dawn', 'Dark - No Street Lights', 'Dark - Street Lights Off','Dark - Unknown Lighting', 'Dark - Street Lights On'],
@@ -135,16 +135,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 ````
-The y variable will be the severity code. This is what we're trying to predict.
-````
-y = df['SEVERITYCODE']
-y[0:5]
-````
-The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.
+
+The y variable will be the severity code. This is what we're trying to predict. The x variable will be the weather, light conditions, and road conditions. These characteristics are what the model will use to predict the severity code.
 
 ````
+y = df['SEVERITYCODE']
 x = df[['WEATHER', 'LIGHTCOND', 'ROADCOND']].values
-x[0:5]
 ````
 Now we split the data into a training set and a test set. The training set is what the model will use to identify patterns and the test set will evaluate the accuracy.
 
@@ -154,26 +150,19 @@ x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.1, random
 print ('Train set:', x_train.shape,  y_train.shape)
 print ('Test set:', x_test.shape,  y_test.shape)
 ````
-
+Train set: (152961, 3) (152961,) \
+Test set: (16996, 3) (16996,)
 ````
 from sklearn.neighbors import KNeighborsClassifier
-````
-````
 k = 5
 neigh = KNeighborsClassifier(n_neighbors = k).fit(x_train,y_train)
-neigh
-````
-````
 yhat = neigh.predict(x_test)
-yhat[0:5]
-````
-````
 from sklearn import metrics
 print("Training set accuracy: ", metrics.accuracy_score(y_train, neigh.predict(x_train)))
 print("Test set accuracy: ", metrics.accuracy_score(y_test, yhat))
 ````
-Train set Accuracy:  0.6716091029739607 \
-Test set Accuracy:  0.6684514003294892
+Training set accuracy:  0.6716091029739607 \
+Test set accuracy:  0.6684514003294892
 
 ````
 Ks = 10
@@ -188,6 +177,8 @@ for n in range(1,Ks):
 
 mean_acc
 ````
+array([0.60302424, 0.63509061, 0.61655684, 0.6703342 , 0.6684514 ,
+       0.6703342 , 0.6684514 , 0.6703342 , 0.6703342 ])
 ````
 plt.plot(range(1,Ks),mean_acc,'red')
 plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
