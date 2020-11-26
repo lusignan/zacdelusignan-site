@@ -1,5 +1,5 @@
 ---
-title: Roman Emperors
+title: Data Viz - Roman Emperors
 author: Zac de Lusignan
 date: '2020-11-08'
 slug: roman-emperors
