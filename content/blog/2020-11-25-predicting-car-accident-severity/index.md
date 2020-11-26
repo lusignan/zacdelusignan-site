@@ -38,7 +38,7 @@ df = pd.read_csv('Data-Collisions.csv', error_bad_lines=False)
 ## Initial Data Exploration
 
 ````
-#Keeping only the relevant variables in the data frame
+#Keep only the relevant variables in the data frame
 df = df[['SEVERITYCODE', 'WEATHER', 'ROADCOND', 'LIGHTCOND']]
 df.head()
 ````
