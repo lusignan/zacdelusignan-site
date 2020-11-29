@@ -6,10 +6,19 @@
     <description>Recent content on Zac de Lusignan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zacdelusignan.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Risk-adjusted Stock Return</title>
+      <link>https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/</link>
+      <pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/</guid>
+      <description>Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns.</description>
+    </item>
     
     <item>
       <title>Predicting Car Accident Severity</title>
@@ -29,7 +38,7 @@
       <description>Introduction From TidyTuesday&amp;rsquo;s Roman Emperors data set.
 The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased the throne.
 Code Below is the code used to create the visualization using R:
-#Load the libraries library(tidyverse) library(tidytuesdayR) library(ggthemes) #Custom color palette imperiumromanum = c(&amp;quot;#8E1F2F&amp;quot;,&amp;quot;#702963&amp;quot;,&amp;quot;#B85C28&amp;quot;,&amp;quot;#297036&amp;quot;, &amp;quot;#F0BC42&amp;quot;,&amp;quot;#26619C&amp;quot;,&amp;quot;#321C6F&amp;quot;,&amp;quot;#1F8E7E&amp;quot;) #Load the dataset emperors &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv&amp;quot;) #Convert the dates into numeric emperors$reign_start &amp;lt;- as.</description>
+#Load libraries library(tidyverse) library(tidytuesdayR) library(ggthemes) #Custom color palette imperiumromanum = c(&amp;quot;#8E1F2F&amp;quot;,&amp;quot;#702963&amp;quot;,&amp;quot;#B85C28&amp;quot;,&amp;quot;#297036&amp;quot;, &amp;quot;#F0BC42&amp;quot;,&amp;quot;#26619C&amp;quot;,&amp;quot;#321C6F&amp;quot;,&amp;quot;#1F8E7E&amp;quot;) #Read in data emperors &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv&amp;quot;) #Convert the dates into numeric emperors$reign_start &amp;lt;- as.</description>
     </item>
     
     <item>

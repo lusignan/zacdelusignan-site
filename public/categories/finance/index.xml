@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Zac de Lusignan</title>
-    <link>https://zacdelusignan.com/tags/python/</link>
-    <description>Recent content in Python on Zac de Lusignan</description>
+    <title>Finance on Zac de Lusignan</title>
+    <link>https://zacdelusignan.com/categories/finance/</link>
+    <description>Recent content in Finance on Zac de Lusignan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Nov 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://zacdelusignan.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zacdelusignan.com/categories/finance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/</guid>
       <description>Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns.</description>
-    </item>
-    
-    <item>
-      <title>Predicting Car Accident Severity</title>
-      <link>https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://zacdelusignan.com/blog/2020-11-25-predicting-car-accident-severity/</guid>
-      <description>Introduction For my capstone project as part of IBM&amp;rsquo;s Professional Certificate in Data Science I created a machine learning model that would predict the severity of a car accident based off of the lighting conditions, road conditions, and weather. This project has many practical uses. Being able to better predict how severe an accident is enables emergency services to more effectively triage in cases of multiple accidents. It could also optimize navigation apps ability to suggest alternate routes.</description>
     </item>
     
   </channel>

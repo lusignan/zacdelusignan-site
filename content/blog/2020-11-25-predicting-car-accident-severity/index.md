@@ -5,7 +5,7 @@ date: '2020-11-25'
 slug: [car-accident-severity]
 categories:
   - Machine Learning
-tags: [Python]
+tags: ['Python']
 description: ''
 featured: ''
 featuredalt: ''
@@ -147,10 +147,10 @@ Now we split the data into a training set and a test set. The training set is wh
 ````
 from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.1, random_state=5)
-print ('Train set:', x_train.shape,  y_train.shape)
+print ('Training set:', x_train.shape,  y_train.shape)
 print ('Test set:', x_test.shape,  y_test.shape)
 ````
-Train set: (152961, 3) (152961,) \
+Training set: (152961, 3) (152961,) \
 Test set: (16996, 3) (16996,)
 ````
 from sklearn.neighbors import KNeighborsClassifier

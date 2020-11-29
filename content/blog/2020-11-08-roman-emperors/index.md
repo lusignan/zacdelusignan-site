@@ -26,7 +26,7 @@ The chart shows us that elected emperors had longer reigns than those who rose t
 Below is the code used to create the visualization using R:
 
 ````
-#Load the libraries
+#Load libraries
 library(tidyverse)
 library(tidytuesdayR)
 library(ggthemes)
@@ -34,7 +34,7 @@ library(ggthemes)
 #Custom color palette
 imperiumromanum = c("#8E1F2F","#702963","#B85C28","#297036", "#F0BC42","#26619C","#321C6F","#1F8E7E")
 
-#Load the dataset
+#Read in data
 emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
 
 #Convert the dates into numeric
