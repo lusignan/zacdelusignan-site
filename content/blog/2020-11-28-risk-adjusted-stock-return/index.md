@@ -96,3 +96,7 @@ annual_sharpe_ratio = daily_sharpe_ratio.mul(annual_factor)
 annual_sharpe_ratio.plot.bar(title='Annualized Sharpe Ratio: Stocks vs S&P 500');
 ````
 ![stocksvssp500](/img/main/stocksvssp500.png)
+
+## Conclusion
+
+After accounting for market volatility, Tesla is the best of the four stock options to buy followed by Apple.

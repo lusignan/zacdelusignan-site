@@ -24,7 +24,7 @@
         "datePublished": "2020-11-28 00:00:00 \u002b0000 UTC",
         "dateModified" : "2020-11-28 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/zacdelusignan.com\/blog\/2020-11-28-risk-adjusted-stock-return\/",
-        "wordCount" : "157",
+        "wordCount" : "177",
         "keywords" : [ "Python","Blog" ]
     }
     </script>
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns.">
 <meta itemprop="datePublished" content="2020-11-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="157">
+<meta itemprop="wordCount" content="177">
 
 
 
@@ -369,7 +369,8 @@
   <header>
     <div class="title">
         
-            <h2><a href="https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/">Risk-adjusted Stock Return</a></h2>
+            <h1><a href="https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/">Risk-adjusted Stock Return</a></h1>
+            
         
         
     </div>
@@ -514,6 +515,8 @@ annual_sharpe_ratio = daily_sharpe_ratio.mul(annual_factor)
 #Plot the annualized sharpe ratio 
 annual_sharpe_ratio.plot.bar(title='Annualized Sharpe Ratio: Stocks vs S&amp;P 500');
 </code></pre><p><img src="https://zacdelusignan.com/img/main/stocksvssp500.png" alt="stocksvssp500"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>After accounting for market volatility, Tesla is the best of the four stock options to buy followed by Apple.</p>
 
   </div>
 
