@@ -13,7 +13,13 @@ linktitle: ''
 type: post
 ---
 
-## Sharpe Ratio
+## Introduction
+
+The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we'll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We'll be using the S&P 500 to measure the overall volatility of the market.
+
+## Getting started
+
+To start, we'll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March.
 
  ````
 #Import libraries

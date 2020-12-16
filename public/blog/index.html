@@ -307,7 +307,7 @@
             November 28, 2020</time>
         <span class="author">Zac de Lusignan</span>
         
-            <p>1 minute read</p>
+            <p>2 minute read</p>
         
         
     </div>
@@ -316,22 +316,7 @@
   
 
   
-  <pre><code>#Import libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-#Read in data
-stock_data = pd.read_csv('https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv', 
-   parse_dates=['Date'],
-   index_col='Date'
-   ).dropna()
-benchmark_data = pd.read_csv('https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv', 
-   parse_dates=['Date'],
-   index_col='Date'
-   ).dropna()
-</code></pre><pre><code>#Visualize stock data
-stock_data.plot(title='Stock Data',&hellip;</code></pre>
+  <p>The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we&rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We&rsquo;ll be using the S&P 500 to measure the overall volatility of the market.</p>
   <footer>
     <ul class="actions">
       <li><a href="https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/" class="button big">Continue Reading</a></li>

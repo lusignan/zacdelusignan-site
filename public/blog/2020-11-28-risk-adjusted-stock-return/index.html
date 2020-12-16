@@ -13,7 +13,7 @@
         "articleSection" : "blog",
         "name" : "Risk-adjusted Stock Return",
         "headline" : "Risk-adjusted Stock Return",
-        "description" : "Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(\u0027https:\/\/raw.githubusercontent.com\/lusignan\/Sharpe-Ratio\/main\/stock_data.csv\u0027, parse_dates=[\u0027Date\u0027], index_col=\u0027Date\u0027 ).dropna() benchmark_data = pd.read_csv(\u0027https:\/\/raw.githubusercontent.com\/lusignan\/Sharpe-Ratio\/main\/stock_data.csv\u0027, parse_dates=[\u0027Date\u0027], index_col=\u0027Date\u0027 ).dropna() #Visualize stock data stock_data.plot(title=\u0027Stock Data\u0027, subplots=True, linewidth = 1.5) #Visualize S\u0026amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S\u0026amp;P 500 returns sp_returns = benchmark_data[\u0027S\u0026amp;P 500\u0027].pct_change() #Plot the daily returns sp_returns.",
+        "description" : "Introduction The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we\u0026rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We\u0026rsquo;ll be using the S\u0026amp;P 500 to measure the overall volatility of the market.\nGetting started To start, we\u0026rsquo;ll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March.",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -24,7 +24,7 @@
         "datePublished": "2020-11-28 00:00:00 \u002b0000 UTC",
         "dateModified" : "2020-11-28 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/zacdelusignan.com\/blog\/2020-11-28-risk-adjusted-stock-return\/",
-        "wordCount" : "177",
+        "wordCount" : "258",
         "keywords" : [ "Python","Blog" ]
     }
     </script>
@@ -51,11 +51,13 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Risk-adjusted Stock Return"/>
-<meta name="twitter:description" content="Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns."/>
+<meta name="twitter:description" content="Introduction The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we&rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We&rsquo;ll be using the S&amp;P 500 to measure the overall volatility of the market.
+Getting started To start, we&rsquo;ll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March."/>
 <meta name="twitter:site" content="@zacdelusignan"/>
 
         <meta property="og:title" content="Risk-adjusted Stock Return" />
-<meta property="og:description" content="Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns." />
+<meta property="og:description" content="Introduction The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we&rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We&rsquo;ll be using the S&amp;P 500 to measure the overall volatility of the market.
+Getting started To start, we&rsquo;ll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zacdelusignan.com/blog/2020-11-28-risk-adjusted-stock-return/" />
 <meta property="article:published_time" content="2020-11-28T00:00:00+00:00" />
@@ -66,10 +68,11 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         <meta itemprop="name" content="Risk-adjusted Stock Return">
-<meta itemprop="description" content="Sharpe Ratio #Import libraries import pandas as pd import numpy as np import matplotlib.pyplot as plt #Read in data stock_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() benchmark_data = pd.read_csv(&#39;https://raw.githubusercontent.com/lusignan/Sharpe-Ratio/main/stock_data.csv&#39;, parse_dates=[&#39;Date&#39;], index_col=&#39;Date&#39; ).dropna() #Visualize stock data stock_data.plot(title=&#39;Stock Data&#39;, subplots=True, linewidth = 1.5) #Visualize S&amp;P 500 data benchmark_data.plot(linewidth = 1.5) #Calculate daily stock returns stock_returns = stock_data.pct_change() #Plot daily returns stock_returns.plot(linewidth = 1.5) #Calculate daily S&amp;P 500 returns sp_returns = benchmark_data[&#39;S&amp;P 500&#39;].pct_change() #Plot the daily returns sp_returns.">
+<meta itemprop="description" content="Introduction The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we&rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We&rsquo;ll be using the S&amp;P 500 to measure the overall volatility of the market.
+Getting started To start, we&rsquo;ll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March.">
 <meta itemprop="datePublished" content="2020-11-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="177">
+<meta itemprop="wordCount" content="258">
 
 
 
@@ -382,7 +385,7 @@
             November 28, 2020</time>
         <span class="author">Zac de Lusignan</span>
         
-            <p>1 minute read</p>
+            <p>2 minute read</p>
         
         
     </div>
@@ -454,7 +457,10 @@
   
 
   <div id="content">
-    <h2 id="sharpe-ratio">Sharpe Ratio</h2>
+    <h2 id="introduction">Introduction</h2>
+<p>The Sharpe Ratio is a way of evaluating the value of an investment after subtracting for its risk. In this project we&rsquo;ll use it to compare four stocks: Alphabet, Amazon, Apple, and Tesla. We&rsquo;ll be using the S&amp;P 500 to measure the overall volatility of the market.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>To start, we&rsquo;ll load in the data which was pulled from Yahoo Finance. To account for the recent recession the data begins with the start of the current business cycle in early March.</p>
 <pre><code>#Import libraries
 import pandas as pd
 import numpy as np
