@@ -9,7 +9,7 @@ Interdisciplinary data analyst experienced in data wrangling, exploration, and v
 
 ### EXPERIENCE
 
-**Data and Evaluation Coordinator**, Feb 2020 - Present\
+**Data Analyst**, Feb 2020 - Present\
 AmeriCorps VISTA, Root & Rebound - Oakland, CA
 
 **Economic Development Coordinator**, Jan - Jul 2019\
@@ -51,6 +51,6 @@ Courses:
 * Adobe Illustrator
 * Adobe Photoshop
 * MS Office (advanced proficiency in Excel)
-* SalesForce
+* Salesforce
 * SurveyMonkey
 * Tableau

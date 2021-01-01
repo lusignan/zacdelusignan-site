@@ -38,6 +38,7 @@ benchmark_data = pd.read_csv('https://raw.githubusercontent.com/lusignan/Sharpe-
     ).dropna()
 ````
 
+
 ````
 #Visualize stock data
 stock_data.plot(title='Stock Data', subplots=True, linewidth = 1.5)
