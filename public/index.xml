@@ -6,10 +6,19 @@
     <description>Recent content on Zac de Lusignan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zacdelusignan.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nautical Twilight</title>
+      <link>https://zacdelusignan.com/projects/item1/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zacdelusignan.com/projects/item1/</guid>
+      <description>VSCode theme https://marketplace.visualstudio.com/items?itemName=lusignan.nautical-twilight</description>
+    </item>
     
     <item>
       <title>Risk-adjusted Stock Return</title>
@@ -40,18 +49,6 @@ Getting started To start, we&amp;rsquo;ll load in the data which was pulled from
 The chart shows us that elected emperors had longer reigns than those who rose to power by other means and the shortest reigns were by those who purchased the throne.
 Code Below is the code used to create the visualization using R:
 #Load libraries library(tidyverse) library(tidytuesdayR) library(ggthemes) #Custom color palette imperiumromanum = c(&amp;quot;#8E1F2F&amp;quot;,&amp;quot;#702963&amp;quot;,&amp;quot;#B85C28&amp;quot;,&amp;quot;#297036&amp;quot;, &amp;quot;#F0BC42&amp;quot;,&amp;quot;#26619C&amp;quot;,&amp;quot;#321C6F&amp;quot;,&amp;quot;#1F8E7E&amp;quot;) #Read in data emperors &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv&amp;quot;) #Convert the dates into numeric emperors$reign_start &amp;lt;- as.</description>
-    </item>
-    
-    <item>
-      <title>Nautical Twilight</title>
-      <link>https://zacdelusignan.com/projects/item1/</link>
-      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://zacdelusignan.com/projects/item1/</guid>
-      <description>RStudio IDE and syntax theme https://github.com/lusignan/Nautical-Twilight
-Compatability RStudio 1.3
-Installation To install, run the following in your RStudio console:
-rstudioapi::addTheme(&amp;quot;https://raw.githubusercontent.com/lusignan/Nautical-Twilight/main/nautical-twilight.rstheme&amp;quot;, apply = TRUE) </description>
     </item>
     
   </channel>

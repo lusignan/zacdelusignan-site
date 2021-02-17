@@ -2,8 +2,8 @@
 author: Zac de Lusignan
 categories:
 - ""
-date: "2020-09-22"
-description: Full RStudio IDE and syntax theme.
+date: "2021-02-13"
+description: Visual Studio Code theme.
 featured: ""
 featuredalt: ""
 featuredpath: ""
@@ -14,16 +14,10 @@ title: Nautical Twilight
 type: itemized
 ---
 
-## RStudio IDE and syntax theme
-https://github.com/lusignan/Nautical-Twilight
+## VSCode theme
 
-![Nautical Twilight](/img/main/nautical-twilight-rstudio-preview.png)
+![Nautical Twilight Icon](/img/main/nautical-twilight-icon.png)
 
-### Compatability
-RStudio 1.3
+https://marketplace.visualstudio.com/items?itemName=lusignan.nautical-twilight
 
-### Installation
-To install, run the following in your RStudio console:
-````
-rstudioapi::addTheme("https://raw.githubusercontent.com/lusignan/Nautical-Twilight/main/nautical-twilight.rstheme", apply = TRUE)
-````
+![Nautical Twilight](/img/main/nautical-twilight-notebook.png)
