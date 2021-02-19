@@ -10,7 +10,7 @@ Interdisciplinary data analyst experienced in data wrangling, exploration, and v
 ### EXPERIENCE
 
 **Data Analyst**, Feb 2020 - Present\
-AmeriCorps VISTA, Root & Rebound - Oakland, CA
+Root & Rebound - Oakland, CA (remote)
 
 **Economic Development Coordinator**, Jan - Jul 2019\
 AmeriCorps VISTA, City of San Angelo Development Corporation - San Angelo, TX
