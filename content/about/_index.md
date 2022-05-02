@@ -9,11 +9,17 @@ Interdisciplinary data analyst experienced in data wrangling, exploration, and v
 
 ### EXPERIENCE
 
-**Data Analyst**, Feb 2020 - Present\
-Root & Rebound - Oakland, CA (remote)
+**Power BI Developer**, May 2022 - Present\
+Link Logistics, A Blackstone Company - Remote
+
+**Data Reporting Analyst**, Apr 2021 - Apr 2022\
+TJX - Marlborough, MA
+
+**Data Analyst**, Feb 2020 - Mar 2021\
+AmeriCorps VISTA/Root & Rebound - Oakland, CA
 
 **Economic Development Coordinator**, Jan - Jul 2019\
-AmeriCorps VISTA, City of San Angelo Development Corporation - San Angelo, TX
+AmeriCorps VISTA/City of San Angelo Development Corporation - San Angelo, TX
 
 
 ### EDUCATION
